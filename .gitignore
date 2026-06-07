@@ -11,3 +11,6 @@ wheels/
 
 # Project
 data/
+uv.lock
+cache/
+NOTES.md

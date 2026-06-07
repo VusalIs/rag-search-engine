@@ -5,9 +5,13 @@ A search engine built from the ground up, progressively adding more sophisticate
 ## Features
 
 - **Keyword Search** — tokenization, stopword filtering, and Porter stemming for fuzzy title matching
+- **Inverted Index** — persistent index with build/save/load for fast document lookup
+- **TF-IDF Scoring** — term frequency, inverse document frequency, and combined TF-IDF ranking
 
 ## Roadmap
 
+- [x] Keyword search
+- [x] Inverted index + TF-IDF
 - [ ] BM25 ranking
 - [ ] Vector / semantic search
 - [ ] Hybrid search (keyword + semantic)
@@ -30,14 +34,19 @@ source .venv/bin/activate
 
 ```bash
 cd cli
-python keyword_search_cli.py search "<query>"
-```
 
-```bash
+# Build the inverted index (run once before searching)
+python keyword_search_cli.py build
+
+# Search movies by keyword
 python keyword_search_cli.py search "police"
-# 1. Kaakha..Kaakha: The Police
 
-python keyword_search_cli.py search "love story"
-# 1. Love Story
-# 2. Love Story 2050
+# Term frequency of a word in a document
+python keyword_search_cli.py tf <doc_id> <term>
+
+# Inverse document frequency of a term
+python keyword_search_cli.py idf <term>
+
+# TF-IDF score for a term in a document
+python keyword_search_cli.py tfidf <doc_id> <term>
 ```

@@ -7,7 +7,7 @@ A search engine built from the ground up, progressively adding more sophisticate
 - **Keyword Search** — tokenization, stopword filtering, and Porter stemming for fuzzy title matching
 - **Inverted Index** — persistent index with build/save/load for fast document lookup
 - **TF-IDF Scoring** — term frequency, inverse document frequency, and combined TF-IDF ranking
-- **BM25** — probabilistic ranking with document length normalization and tunable k1/b parameters
+- **BM25** — probabilistic ranking with document length normalization and tunable k1/b parameters ([details](docs/bm25.md))
 
 ## Roadmap
 

@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
 import argparse
-from lib.keyword_search import build_command, search_command, tf_command, idf_command, tf_idf_command, bm25_idf_command, bm25_tf_command, bm25search_command
-from lib.search_utils import BM25_K1, BM25_B
+from lib.commands.keyword import build_command, search_command, tf_command, idf_command, tf_idf_command
+from lib.commands.bm25 import bm25_idf_command, bm25_tf_command, bm25search_command
+from lib.config import BM25_K1, BM25_B
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Keyword Search CLI")

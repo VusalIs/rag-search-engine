@@ -91,3 +91,8 @@ Popular indexing techniques for approximate nearest neighbor (ANN) search in vec
 1. **HNSW** (Hierarchical Navigable Small World) — graph-based index that builds multiple layers of proximity graphs, from coarse to fine-grained. Navigates top-down at query time for fast, high-recall ANN search. Used by FAISS, Pinecone, and Weaviate.
 2. **IVF** (Inverted File Index) — partitions the vector space into clusters (Voronoi cells) using k-means. At query time, searches only the nearest cluster(s) rather than the full index, trading a small amount of recall for significant speed gains.
 3. **LSH** (Locality-Sensitive Hashing) — uses hash functions designed so that similar vectors collide in the same bucket. Achieves sub-linear query time but generally lower recall than HNSW.
+
+
+ColBERT
+multi-vector retrieval (MVR)
+Late Chunking

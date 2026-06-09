@@ -93,6 +93,8 @@ Popular indexing techniques for approximate nearest neighbor (ANN) search in vec
 3. **LSH** (Locality-Sensitive Hashing) — uses hash functions designed so that similar vectors collide in the same bucket. Achieves sub-linear query time but generally lower recall than HNSW.
 
 
-ColBERT
-multi-vector retrieval (MVR)
-Late Chunking
+Retrieval strategies that go beyond single-vector-per-document:
+
+4. **ColBERT** (Contextualized Late Interaction over BERT) — encodes each query and document as a set of token-level vectors rather than one pooled embedding. Scores via MaxSim: for each query token, find its closest document token and sum those similarities. Finer-grained than bi-encoders, much faster than cross-encoders.
+5. **Multi-vector retrieval (MVR)** — represents each document with multiple vectors (one per chunk, sentence, or passage) instead of one. A document's relevance score is taken from its highest-scoring vector, so meaning spread across a long document is captured without collapsing it into a single embedding.
+6. **Late Chunking** — passes the full document through the encoder first to produce contextually-enriched token embeddings, then pools those into chunk vectors. Each chunk retains context from the surrounding text, unlike standard chunking which encodes chunks in isolation and discards cross-chunk context.
